@@ -1,0 +1,45 @@
+{
+  "name": "dsh-model-viewer",
+  "version": "0.1.2",
+  "type": "module",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./assets/*": "./assets/*"
+  },
+  "files": [
+    "lib",
+    "occt",
+    "assets",
+    "cordis.patch.yml"
+  ],
+  "scripts": {
+    "build": "tsdown --env.NODE_ENV=production",
+    "dev": "tsdown --watch --env.NODE_ENV=development",
+    "prepare": "tsdown --env.NODE_ENV=production"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.1.0",
+    "@deepseek-ai/dsh-tools": "0.2.2-rc.1",
+    "@types/node": "^26.6.6",
+    "@types/react": "^18.3.18",
+    "@types/three": "^0.180.0",
+    "react": "^18.3.1",
+    "tsdown": "^0.22.2",
+    "typescript": "^6.0.3"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": []
+    }
+  },
+  "dependencies": {
+    "three": "^0.180.0"
+  },
+  "license": "MIT"
+}
